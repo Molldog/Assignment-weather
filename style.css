@@ -42,3 +42,6 @@ h1,
 footer {
   text-align: center;
 }
+li {
+  text-decoration: none;
+}
