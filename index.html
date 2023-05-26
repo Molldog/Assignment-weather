@@ -28,8 +28,8 @@
         <div class="col-6">
           <form class="row search-button" id="search-button">
             <input type="text" id="search-text-input" placeholder="Search location" autofocus="on" class="form-control col-6 shadow-sm" />
-            <input type="submit" value="Search" class="form-control col-3 btn btn-info shadow-sm" />
-            <input type="button" id="current-location" value="Current" class="form-control col-3 shadow-sm" />
+            <input type="submit" value="Search" class="form-control col-3 btn shadow-sm" />
+            <input type="button" id="current-location" value="Current" class="form-control btn col-3 shadow-sm" />
           </form>
         </div>
         <div class="col-12">
@@ -37,8 +37,17 @@
 							<a href="#" id="celsius-link">°C</a>
 							<a href="#" id="fahrenheit-link">|°F</a>
 						</span>
-            Humidity:<span class id="main-humidity"></span>%
-            Wind:<span class id="main-wind"></span>km/h
+            <ul>
+              <li>
+            Rainfall: 5% 1mm 
+              </li>
+              <li>
+            Humidity: <span class id="main-humidity"></span>%
+            </li>
+            <li>
+            Wind: <span class id="main-wind"></span>km/h
+            </li>
+            </ul>
           </div>
         <div class="col-2">
           <ul>
@@ -53,13 +62,13 @@
             23°
           </span>
           </li>
-           <li>
+           <li class="rain">
            💧 5% 1mm
            </li>
-          <li>
+          <li class="humidity">
             humidity
           </li>
-          <li>
+          <li class="wind">
            💨 4km/hr
           </li>
          </ul>
@@ -75,13 +84,13 @@
             <li class="high-temp">
               25° <span class="low-temp">20°</span>
             </li>
-            <li>
+            <li class="rain">
               💧 5% 1mm
             </li>
-            <li>
+            <li class="humidity">
               humidity
             </li>
-            <li>
+            <li class="wind">
               💨4km/hr
             </li>
           </ul>
@@ -97,13 +106,13 @@
               <li class="high-temp">
                 20° <span class="low-temp">15°</span> 
               </li>
-              <li>
+              <li class="rain">
                 💧 50% 1mm
               </li>
-              <li>
+              <li class="humidity">
                 humidity
               </li>
-              <li>
+              <li class="wind">
                 💨 4km/hr
               </li>
               </ul>
@@ -119,13 +128,13 @@
               <li class="high-temp">
                 15° <span class="low-temp">10°</span> 
               </li>
-              <li>
+              <li class="rain">
                 💧 60% 1-5mm
               </li>
-              <li>
+              <li class="humidity">
                 humidity
               </li>
-              <li>
+              <li class="wind">
                 💨 4km/hr
               </li>
             </ul>
@@ -141,13 +150,13 @@
               <li class="high-temp">
                 10° <span class="low-temp">5°</span>
               </li>
-              <li>
+              <li class="rain">
                 💧 70% 5-10mm
               </li>
-              <li>
+              <li class="humidity">
                 humidity
               </li>
-              <li>
+              <li class="wind">
                 💨 4km/hr
               </li>
             </ul>
@@ -163,13 +172,13 @@
               <li class="high-temp">
                 2° <span class="low-temp">0°</span> 
               </li>
-              <li>
+              <li class="rain">
                 💧 80% 10-15mm
               </li>
-              <li>
+              <li class="humidity">
                 humidity
               </li>
-              <li>
+              <li class="wind">
                 💨 4km/hr
               </li>
             </ul>
