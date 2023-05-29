@@ -38,6 +38,11 @@ function displayWeather(response) {
   );
   let dayTime = document.querySelector("#day-time");
   dayTime.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}02x.png`
+  );
 }
 
 function searchCity(city) {
