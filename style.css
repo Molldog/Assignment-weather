@@ -102,3 +102,10 @@ a {
   border-color: #ec6e4c;
   background-color: #c6654d;
 }
+.weather-temperature .active {
+  color: #48484a;
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
