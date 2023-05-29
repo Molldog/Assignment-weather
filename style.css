@@ -41,7 +41,10 @@ a {
   text-align: center;
 }
 .main-emoji {
-  font-size: 70px;
+  font-size: 50px;
+}
+.main-emoji:first-letter {
+  text-transform: capitalize;
 }
 .main-temp {
   font-size: 50px;
