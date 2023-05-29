@@ -43,6 +43,7 @@ function displayWeather(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}02x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
