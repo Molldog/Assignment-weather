@@ -24,6 +24,41 @@ function formatDate(timestamp) {
   return `${day} | ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row>`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+       <div class="col-2">
+           <ul>
+             <li class="day">${day}</li>
+             <li class="emoji">🌤</li>
+             <li class="high-temp">
+                 28° <span class="low-temp"> 23° </span>
+             </li>
+             <li class="rain">💧 5% 1mm</li>
+            <li class="humidity">humidity</li>
+             <li class="wind">💨 4km/hr</li>
+           </ul>
+       </div>
+   `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "9ff62228143f9cc1758df8baa86a6b09";
+  let apiUrl = `https://api.openweathermao.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#main-temp").innerHTML = Math.round(
@@ -46,6 +81,8 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  getForecast(response.data.coords);
 }
 
 function searchCity(city) {
