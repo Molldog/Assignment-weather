@@ -30,7 +30,7 @@ a {
   max-width: 800px;
 }
 .low-temp {
-  color: #5183c1;
+  color: #72aae5;
 }
 .high-temp {
   color: #ec6e4c;
@@ -67,7 +67,7 @@ a {
 .search-button {
   padding: 20px 20px;
 }
-.day {
+.weather-forecast-date {
   text-align: center;
 }
 .current-location {
@@ -81,6 +81,11 @@ a {
 }
 .wind {
   text-align: center;
+}
+.icon {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 .main-humidity {
   color: #ec6e4c;

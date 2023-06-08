@@ -51,6 +51,7 @@ function displayForecast(response) {
              }@2x.png"
              alt="weather-icon"
              width="42"
+             class="icon"
              />
              <div class="high-temp">
                  ${Math.round(
@@ -59,9 +60,9 @@ function displayForecast(response) {
           forecastDay.temp.min
         )}° </span>
              </div>
-             <li class="rain">${forecastDay.rain}</li>
-            <li class="humidity">${forecastDay.humidity}</li>
-             <li class="wind">${forecastDay.wind_speed}km/hr</li>
+             <li class="rain">R ${Math.round(forecastDay.rain)}mm</li>
+            <li class="humidity">H ${forecastDay.humidity}%</li>
+             <li class="wind">W ${Math.round(forecastDay.wind_speed)}km/h</li>
        </div>
    `;
     }
@@ -72,7 +73,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "9ff62228143f9cc1758df8baa86a6b09";
+  let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -84,6 +85,7 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#main-rain").innerHTML = response.data.main.rain;
   document.querySelector("#main-humidity").innerHTML =
     response.data.main.humidity;
   document.querySelector("#main-wind").innerHTML = Math.round(
